@@ -1,5 +1,6 @@
 import React from "react";
 import { useRef } from "react";
+import logo from '../resources/empack-logo.png'
 import { db } from "../firebase";
 
 
@@ -51,6 +52,9 @@ const Encuesta = () => {
 
     return (
         <div className="content">
+            <div className="logo-img">
+            <img src={logo} alt="empack-logo"/>
+            </div>
             <header>Ingresa tu e-mail</header>
             <form action="#">
                 <div className="field">
