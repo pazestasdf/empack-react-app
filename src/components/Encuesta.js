@@ -16,6 +16,7 @@ const Encuesta = () => {
     const postRef = useRef();
     const widgetRef = useRef();
     const surveyValueRef = useRef();
+    const questionHeaderRef = useRef();
 
     // let regExp = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
     
@@ -49,10 +50,10 @@ const Encuesta = () => {
       function handleButtonClick(e){
         getSurveyValue();
         widgetRef.current.style.display = "none";
+        questionHeaderRef.current.style.display = "none";
         postRef.current.style.display = "block";
         return false;
     }
-
     function getSurveyValue(){
         // const surveyValue = surveyValueRef.current;
         const surveyValue = document.querySelector("#survey-value");
@@ -67,11 +68,8 @@ const Encuesta = () => {
             console.log(response);
         }).catch(function(error){
             console.log(error);
-
         })
     }
-
-
 
     return (
         <div className="content">
@@ -93,9 +91,11 @@ const Encuesta = () => {
             </form> */}
 
             <div className="container">
-                <div className="header">
-                    <h2>Porque nos interesa ir mejorando 
-                        <br />Por favor, responde esta encuesta corta sobre tu experiencia con nuestro sitio web e-commerce</h2>
+                <div className="header" ref={questionHeaderRef}>
+                    <h2>Porque nos interesa ir mejorando
+                        <br />Te invitamos a calificar la experiencia que tuviste con nuestro sitio web ecommerce.</h2>
+                    
+                <h3 className="pregunta">¿Cuál sería la probabilidad de volver a comprar en el sitio web de Empack Link?</h3>
                 </div>
                 <div className="post" ref={postRef}>
                     <div className="text">¡Gracias por tus comentarios!<br /> Tu opinión es importante para nosotros. </div>

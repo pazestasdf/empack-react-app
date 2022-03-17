@@ -11,12 +11,14 @@ html,body{
   background: #00943d;
 }
 .content, .container{
+  min-width: 700px;
   max-width: 700px;
   padding-bottom: 5px;
   /* margin-bottom: 35px; */
   background: #00943d;
   color: #fff;
   text-align: center;
+
   /* box-shadow: 0px 0px 15px rgba(0,0,0,0.2); */
 }
 .content{
@@ -120,6 +122,14 @@ form button:hover{
   /* margin: 0 0 20px 0; */
   text-align: center;
 }
+.container h3{
+  padding-top: 30px;
+  font-size: 20px;
+  color: #1b1b1b;
+  font-weight: 500;
+  margin: 0 0 20px 0;
+  text-align: center;
+}
 .container .post{
   display: none;
 }
@@ -180,19 +190,19 @@ input#rate-5:checked ~ label{
   text-shadow: 0 0 20px #952;
 }
 #rate-1:checked ~ form header:before{
-  content: "No me gusta para nada";
+  content: "Nada Probable";
 }
 #rate-2:checked ~ form header:before{
-  content: "No me gusta";
+  content: "Poco Probable";
 }
 #rate-3:checked ~ form header:before{
-  content: "Indiferente/No me importa";
+  content: "Indiferente";
 }
 #rate-4:checked ~ form header:before{
-  content: "Me gusta";
+  content: "Probable";
 }
 #rate-5:checked ~ form header:before{
-  content: "Me encanta";
+  content: "Muy Probable";
 }
 .container form{
   display: none;
@@ -207,7 +217,7 @@ input:checked ~ form{
   font-weight: 500;
   margin: 5px 0 20px 0;
   text-align: center;
-  transition: all 0.05s ease;
+  transition: all 0.5s ease;
 }
 .star-widget form .textarea{
   height: 100px;
@@ -245,7 +255,7 @@ input:checked ~ form{
   font-weight: 500;
   text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.05s ease;
+  transition: all 0.5s ease;
 }
 .star-widget form .btn button:hover{
   background: #1b1b1b;
