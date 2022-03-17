@@ -8,15 +8,19 @@ html,body{
   display: grid;
   height: 100%;
   place-items: center;
-  background: #f2f2f2
+  background: #00943d;
 }
 .content, .container{
   max-width: 700px;
-  padding: 20px;
-  margin-bottom: 35px;
+  padding-bottom: 5px;
+  /* margin-bottom: 35px; */
   background: #00943d;
   color: #fff;
   text-align: center;
+  /* box-shadow: 0px 0px 15px rgba(0,0,0,0.2); */
+}
+.content{
+  border-radius: 10px;
   box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
 }
 .content header{
@@ -109,20 +113,22 @@ form button:hover{
 
 /* Stars */
 
-.container h1{
+.container h2{
   font-size: 25px;
   color: #fff;
-  font-weight: 500;
-  margin: 0 0 20px 0;
+  font-weight: 400;
+  /* margin: 0 0 20px 0; */
   text-align: center;
 }
 .container .post{
   display: none;
 }
 .container .text{
-  font-size: 25px;
-  color: #666;
-  font-weight: 500;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 400;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 /* .container .post .edit{
   position: absolute;
@@ -151,6 +157,9 @@ form button:hover{
 
 #label-5{
   margin-right: 25% !important;
+}
+.star-widget {
+  margin-bottom: 70px;
 }
 .star-widget label{
   font-size: 40px;
@@ -226,11 +235,12 @@ input:checked ~ form{
 }
 .star-widget form .btn button{
   height: 100%;
+  margin-bottom: 30px;
   width: 100%;
   border: 1px solid #444;
   outline: none;
-  background: #222;
-  color: #999;
+  background: #444;
+  color: #fff;
   font-size: 17px;
   font-weight: 500;
   text-transform: uppercase;
@@ -240,7 +250,9 @@ input:checked ~ form{
 .star-widget form .btn button:hover{
   background: #1b1b1b;
 }
-
-/* .stars{
-  margin: 0 auto;
-} */
+.container .header{
+  padding-bottom: 30px;
+}
+.btn-stars{
+  margin-top: 20px;
+}

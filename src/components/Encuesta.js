@@ -5,43 +5,43 @@ import { db } from "../firebase";
 
 
 const Encuesta = () => {
-    const emailRef = useRef();
-    // const email = document.querySelector("#email");
-    const icon1Ref = useRef();
-    const icon2Ref = useRef();
-    const errorRef = useRef();
+    // const emailRef = useRef();
+    // // const email = document.querySelector("#email");
+    // const icon1Ref = useRef();
+    // const icon2Ref = useRef();
+    // const errorRef = useRef();
 
     const btnRef = useRef();
     const postRef = useRef();
     const widgetRef = useRef();
 
-    let regExp = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    // let regExp = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
     
-    function handleEmailChange(e){
-        if (emailRef.current.value.match(regExp)) {
-            emailRef.current.style.borderColor = "#27ae60";
-            emailRef.current.style.background = "#eafaf1";
-            icon1Ref.current.style.display = "none";
-            icon2Ref.current.style.display = "block";
-            errorRef.current.style.display = "none";
-            // btnEmail.style.display = "block";
-         } else {
-            emailRef.current.style.borderColor = "#e74c3c";
-            emailRef.current.style.background = "#fceae9";
-            icon1Ref.current.style.display = "block";
-            icon2Ref.current.style.display = "none";
-            errorRef.current.style.display = "block";
-            // btnEmail.style.display = "none";
-         }
-         if (emailRef.current.value == "") {
-            emailRef.current.style.borderColor = "lightgrey";
-            emailRef.current.style.background = "#fff";
-            icon1Ref.current.style.display = "none";
-            icon2Ref.current.style.display = "none";
-            errorRef.current.style.display = "none";
-            // btnEmail.style.display = "none";
-         }
-    }
+    // function handleEmailChange(e){
+    //     if (emailRef.current.value.match(regExp)) {
+    //         emailRef.current.style.borderColor = "#27ae60";
+    //         emailRef.current.style.background = "#eafaf1";
+    //         icon1Ref.current.style.display = "none";
+    //         icon2Ref.current.style.display = "block";
+    //         errorRef.current.style.display = "none";
+    //         // btnEmail.style.display = "block";
+    //      } else {
+    //         emailRef.current.style.borderColor = "#e74c3c";
+    //         emailRef.current.style.background = "#fceae9";
+    //         icon1Ref.current.style.display = "block";
+    //         icon2Ref.current.style.display = "none";
+    //         errorRef.current.style.display = "block";
+    //         // btnEmail.style.display = "none";
+    //      }
+    //      if (emailRef.current.value == "") {
+    //         emailRef.current.style.borderColor = "lightgrey";
+    //         emailRef.current.style.background = "#fff";
+    //         icon1Ref.current.style.display = "none";
+    //         icon2Ref.current.style.display = "none";
+    //         errorRef.current.style.display = "none";
+    //         // btnEmail.style.display = "none";
+    //      }
+    // }
     
       // const editBtn = document.querySelector(".edit");
       function handleButtonClick(e){
@@ -55,8 +55,8 @@ const Encuesta = () => {
             <div className="logo-img">
             <img src={logo} alt="empack-logo"/>
             </div>
-            <header>Ingresa tu e-mail</header>
-            <form action="#">
+            {/* <header>Ingresa tu e-mail</header> */}
+            {/* <form action="#">
                 <div className="field">
                     <input onChange={(e) => { handleEmailChange(e) }} id="email" type="text" autoComplete="off" placeholder="correo@ejemplo.com" ref={emailRef} />
                     <div className="icons">
@@ -67,15 +67,15 @@ const Encuesta = () => {
                 <div className="error-text" ref={errorRef}>
                     Ingresa un e-mail válido
                 </div>
-                {/* <!-- <button className="btn-email">Enviar</button> --> */}
-            </form>
+            </form> */}
 
             <div className="container">
                 <div className="header">
-                    <h1>¿Qué tan satisfecho estás con la experiencia de nuestros servicios?</h1>
+                    <h2>Porque nos interesa ir mejorando 
+                        <br />Por favor, responde esta encuesta corta sobre tu experiencia con nuestro sitio web e-commerce</h2>
                 </div>
                 <div className="post" ref={postRef}>
-                    <div className="text">Gracias por tu opinion!</div>
+                    <div className="text">¡Gracias por tus comentarios!<br /> Tu opinión es importante para nosotros. </div>
                     {/* <!-- <div className="edit">EDIT</div> --> */}
                 </div>
                 <div className="star-widget" ref={widgetRef}>
@@ -93,10 +93,6 @@ const Encuesta = () => {
 
                     <form action="#">
                         <header></header>
-
-                        <div className="textarea">
-                            <textarea cols="30" placeholder="Describe tu experiencia..."></textarea>
-                        </div>
 
                         <div className="btn" onClick={(e) => { handleButtonClick(e) }} ref={btnRef}>
                             <button className="btn-stars" type="submit">Enviar</button>
