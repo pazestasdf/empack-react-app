@@ -5,6 +5,7 @@ import { db } from "../firebase";
 
 
 const Encuesta = () => {
+
     // const emailRef = useRef();
     // // const email = document.querySelector("#email");
     // const icon1Ref = useRef();
@@ -14,6 +15,7 @@ const Encuesta = () => {
     const btnRef = useRef();
     const postRef = useRef();
     const widgetRef = useRef();
+    const surveyValueRef = useRef();
 
     // let regExp = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
     
@@ -45,10 +47,31 @@ const Encuesta = () => {
     
       // const editBtn = document.querySelector(".edit");
       function handleButtonClick(e){
+        getSurveyValue();
         widgetRef.current.style.display = "none";
         postRef.current.style.display = "block";
         return false;
     }
+
+    function getSurveyValue(){
+        // const surveyValue = surveyValueRef.current;
+        const surveyValue = document.querySelector("#survey-value");
+        var style = window.getComputedStyle(surveyValue, ":before");
+        var textContent = style["content"];
+        var date = new Date();
+        var data = {
+            date: date.toISOString().slice(0, 10), 
+            response: textContent.replaceAll("\"", ""),
+        }
+        db.collection("empack-encuesta").add(data).then(function(response){
+            console.log(response);
+        }).catch(function(error){
+            console.log(error);
+
+        })
+    }
+
+
 
     return (
         <div className="content">
@@ -92,7 +115,7 @@ const Encuesta = () => {
                     <label htmlFor="rate-1" className="fas fa-star" id="label-1"></label>
 
                     <form action="#">
-                        <header></header>
+                        <header id="survey-value" ref={surveyValueRef}></header>
 
                         <div className="btn" onClick={(e) => { handleButtonClick(e) }} ref={btnRef}>
                             <button className="btn-stars" type="submit">Enviar</button>
