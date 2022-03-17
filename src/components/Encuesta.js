@@ -72,7 +72,7 @@ const Encuesta = () => {
     }
 
     return (
-        <div className="content">
+        <div className="content-sm">
             <div className="logo-img">
             <img src={logo} alt="empack-logo"/>
             </div>
